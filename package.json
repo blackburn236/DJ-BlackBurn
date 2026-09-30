@@ -1,13 +1,14 @@
 {
   "name": "dj-blackburn-free-site",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "DJ BlackBurn - free online music website with admin upload panel",
+  "description": "DJ BlackBurn online music site with Supabase storage",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.57.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
