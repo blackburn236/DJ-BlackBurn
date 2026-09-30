@@ -54,7 +54,7 @@ app.use(session({
   resave:false, saveUninitialized:false,
   cookie:{httpOnly:true, sameSite:"lax", secure:false, maxAge:1000*60*60*24*7}
 }));
-app.use(express.static(path.join(ROOT,"public")));
+app.use(express.static(ROOT));
 app.use("/uploads", express.static(path.join(ROOT,"uploads")));
 
 app.get("/api/me",(req,res)=>res.json({admin:!!(req.session && req.session.admin)}));
@@ -124,7 +124,7 @@ app.delete("/api/songs/:id", isAdmin, (req,res)=>{
   res.json({ok:true});
 });
 
-app.get("*",(req,res)=>res.sendFile(path.join(ROOT,"public","index.html")));
+app.get("*",(req,res)=>res.sendFile(path.join(ROOT,"index.html")));
 
 app.use((err,req,res,next)=>{
   res.status(400).json({error:err.message||"Erro no servidor"});
