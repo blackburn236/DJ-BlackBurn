@@ -6,11 +6,33 @@
 <meta name="description" content="DJ BlackBurn — música, Afro House, Afrobeats, Kizomba, Reggaeton e Funk BR.">
 <title>DJ BlackBurn — Official</title>
 <link rel="stylesheet" href="/styles.css">
+<style>
+.hero{min-height:86vh}
+.hero-bg{background-image:linear-gradient(100deg,rgba(5,5,5,.94) 12%,rgba(5,5,5,.62) 55%,rgba(5,5,5,.2)),url('/dj-blackburn.png');background-position:center;background-size:cover}
+.hero-content{max-width:1000px}
+.hero .eyebrow{color:#f0a33a}
+.hero h1{font-size:clamp(64px,13vw,170px);text-shadow:0 10px 45px rgba(0,0,0,.55)}
+.hero .tag{max-width:650px;font-size:clamp(20px,2.5vw,30px)}
+.hero-badge{display:inline-flex;gap:9px;align-items:center;margin-top:26px;padding:9px 14px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(0,0,0,.35);color:#ddd;font-size:11px;letter-spacing:1.4px}
+.hero-badge i{width:7px;height:7px;border-radius:50%;background:#f0a33a;display:inline-block;box-shadow:0 0 14px #f0a33a}
+.quick-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#292929;border:1px solid #292929;border-radius:18px;overflow:hidden;margin-top:35px}
+.quick-strip div{background:#101010;padding:22px}.quick-strip strong{display:block;font-size:24px}.quick-strip span{color:#888;font-size:11px;letter-spacing:1.5px}
+.release{display:grid;grid-template-columns:1.15fr 1fr;gap:50px;align-items:center;border-top:1px solid var(--line)}
+.release-card{border:1px solid #292929;border-radius:22px;overflow:hidden;background:#101010;box-shadow:0 20px 70px rgba(0,0,0,.28)}
+.release-card img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.release-copy p{color:#aaa;line-height:1.7;font-size:18px}.release-copy .eyebrow{color:#f0a33a}
+.release-title{font-size:clamp(38px,5vw,70px);line-height:.95;letter-spacing:-3px;margin:8px 0 18px}
+.release-note{display:inline-block;color:#aaa;border:1px solid #333;border-radius:999px;padding:8px 12px;font-size:11px;letter-spacing:1.2px}
+@media(max-width:760px){
+.quick-strip{grid-template-columns:1fr}.release{grid-template-columns:1fr;gap:30px}
+.hero{min-height:80vh}.hero-bg{background-position:65% center}
+}
+</style>
 </head>
 <body>
 <header class="top">
   <a class="logo" href="#top">DJ <span>BlackBurn</span></a>
-  <nav><a href="#sobre">SOBRE</a><a href="#musica">MY MUSIC</a><a href="#contacto">CONTACTO</a><a class="admin-link" href="/admin.html">ADMIN</a></nav>
+  <nav><a href="#sobre">SOBRE</a><a href="#lancamento">LANÇAMENTO</a><a href="#musica">MY MUSIC</a><a href="#contacto">BOOKING</a><a class="admin-link" href="/admin.html">ADMIN</a></nav>
 </header>
 
 <main id="top">
@@ -20,13 +42,35 @@
     <p class="eyebrow">DJ • PRODUCER • ENTERTAINER</p>
     <h1>DJ <strong>BLACKBURN</strong></h1>
     <p class="tag">A música não se ouve apenas. <b>SENTE-SE.</b></p>
-    <div class="buttons"><a class="btn" href="#musica">▶ OUVIR AS MINHAS MÚSICAS</a><a class="btn ghost" href="#contacto">BOOKING</a></div>
+    <div class="buttons">
+      <a class="btn" href="#musica">▶ OUVIR AS MINHAS MÚSICAS</a>
+      <a class="btn ghost" href="#contacto">BOOKING</a>
+    </div>
+    <div class="hero-badge"><i></i> OFFICIAL WEBSITE • DJ BLACKBURN</div>
+    <div class="quick-strip">
+      <div><strong>AFRO</strong><span>HOUSE • AFROBEATS</span></div>
+      <div><strong>KIZOMBA</strong><span>REGGAETON • FUNK BR</span></div>
+      <div><strong>100% ORIGINAL</strong><span>MÚSICA &amp; PROJETOS</span></div>
+    </div>
   </div>
 </section>
 
 <section id="sobre" class="section about">
   <div><p class="eyebrow">DJ BLACKBURN</p><h2>Som, energia e identidade.</h2></div>
   <div><p>DJ BlackBurn apresenta uma mistura de Afro House, Afrobeats, Kizomba, Reggaeton, Funk BR e sons de festa. Este é o espaço oficial para ouvir os meus lançamentos e acompanhar os meus projetos.</p><div class="genre-line"><span>AFRO HOUSE</span><span>AFROBEATS</span><span>KIZOMBA</span><span>REGGAETON</span><span>FUNK BR</span></div></div>
+</section>
+
+<section id="lancamento" class="section release">
+  <div class="release-card">
+    <img src="/dj-blackburn.png" alt="DJ BlackBurn">
+  </div>
+  <div class="release-copy">
+    <p class="eyebrow">EM DESTAQUE</p>
+    <h2 class="release-title">Dança<br>Comigo</h2>
+    <span class="release-note">DJ BLACKBURN • AFRO HOUSE • 2026</span>
+    <p>Ouve diretamente no site e descobre os meus novos sons. A secção MY MUSIC é atualizada sempre que publico uma nova música.</p>
+    <a class="btn" href="#musica">▶ OUVIR AGORA</a>
+  </div>
 </section>
 
 <section id="musica" class="section music-section">
@@ -36,9 +80,13 @@
 </section>
 
 <section id="contacto" class="section contact">
-  <p class="eyebrow">BOOKING & SOCIAL</p><h2>Vamos fazer a festa.</h2>
+  <p class="eyebrow">BOOKING &amp; SOCIAL</p><h2>Vamos fazer a festa.</h2>
   <p>Para bookings, eventos e colaborações, entra em contacto comigo.</p>
-  <div class="socials"><a href="https://www.instagram.com/_blackburn_0/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook ↗</a></div>
+  <div class="socials">
+    <a href="https://www.instagram.com/_blackburn_0/" target="_blank" rel="noopener">Instagram ↗</a>
+    <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok ↗</a>
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook ↗</a>
+  </div>
 </section>
 </main>
 
@@ -48,6 +96,7 @@
   <audio id="audio" controls preload="none"></audio>
   <button id="closePlayer" class="close-player" title="Fechar">×</button>
 </div>
+
 <footer>© <span id="year"></span> DJ BlackBurn — Official Website</footer>
 <script src="/app.js"></script>
 </body>
