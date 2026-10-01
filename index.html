@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="DJ BlackBurn — música, Afro House, Afrobeats, Kizomba, Reggaeton e Funk BR.">
+<meta name="description" content="DJ BlackBurn — música, eventos, bookings e lançamentos.">
 <title>DJ BlackBurn — Official</title>
 <link rel="stylesheet" href="/styles.css">
 <style>
@@ -22,17 +22,31 @@
 .release-copy p{color:#aaa;line-height:1.7;font-size:18px}.release-copy .eyebrow{color:#f0a33a}
 .release-title{font-size:clamp(38px,5vw,70px);line-height:.95;letter-spacing:-3px;margin:8px 0 18px}
 .release-note{display:inline-block;color:#aaa;border:1px solid #333;border-radius:999px;padding:8px 12px;font-size:11px;letter-spacing:1.2px}
-.feature-loading{color:#888;padding:80px 20px;text-align:center}
+
+.events-section{border-top:1px solid var(--line)}
+.events-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+.events-intro{max-width:650px;color:#aaa;font-size:18px;line-height:1.7}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.event-card{background:#101010;border:1px solid #292929;border-radius:20px;padding:24px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}
+.event-card:hover{transform:translateY(-5px);border-color:#555}
+.event-date{font-size:12px;letter-spacing:2px;color:#f0a33a;margin-bottom:14px}
+.event-card h3{font-size:28px;margin:0 0 10px;letter-spacing:-1px}
+.event-card p{color:#999;line-height:1.5;margin:0}
+.event-status{display:inline-flex;align-self:flex-start;border:1px solid #333;border-radius:99px;padding:7px 11px;color:#bbb;font-size:10px;letter-spacing:1.3px}
+.booking-box{margin-top:25px;padding:28px;border:1px solid #3a3a3a;border-radius:20px;background:linear-gradient(110deg,#141414,#0c0c0c);display:flex;justify-content:space-between;align-items:center;gap:25px}
+.booking-box h3{font-size:28px;margin:0 0 7px}.booking-box p{margin:0;color:#999}
+@media(max-width:900px){.events-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){
 .quick-strip{grid-template-columns:1fr}.release{grid-template-columns:1fr;gap:30px}
 .hero{min-height:80vh}.hero-bg{background-position:65% center}
+.events-head{display:block}.events-grid{grid-template-columns:1fr}.booking-box{display:block}.booking-box .btn{margin-top:18px}
 }
 </style>
 </head>
 <body>
 <header class="top">
   <a class="logo" href="#top">DJ <span>BlackBurn</span></a>
-  <nav><a href="#sobre">SOBRE</a><a href="#lancamento">LANÇAMENTO</a><a href="#musica">MY MUSIC</a><a href="#contacto">BOOKING</a><a class="admin-link" href="/admin.html">ADMIN</a></nav>
+  <nav><a href="#sobre">SOBRE</a><a href="#lancamento">LANÇAMENTO</a><a href="#eventos">EVENTOS</a><a href="#musica">MY MUSIC</a><a href="#contacto">BOOKING</a><a class="admin-link" href="/admin.html">ADMIN</a></nav>
 </header>
 
 <main id="top">
@@ -70,6 +84,53 @@
     <span id="featuredNote" class="release-note">DJ BLACKBURN</span>
     <p>Ouve diretamente no site e descobre os meus novos sons. Esta área mostra automaticamente o lançamento mais recente publicado no MY MUSIC.</p>
     <button id="featuredListen" class="btn" type="button">▶ OUVIR AGORA</button>
+  </div>
+</section>
+
+<section id="eventos" class="section events-section">
+  <div class="events-head">
+    <div>
+      <p class="eyebrow">DJ BOOKINGS</p>
+      <h2>Próximos eventos</h2>
+    </div>
+    <p class="events-intro">Aqui podes apresentar as próximas festas, clubs, festivais e atuações do DJ BlackBurn.</p>
+  </div>
+
+  <div class="events-grid">
+    <article class="event-card">
+      <div>
+        <div class="event-date">EM BREVE</div>
+        <h3>Próximo evento</h3>
+        <p>Os próximos eventos e atuações serão anunciados aqui.</p>
+      </div>
+      <span class="event-status">A ANUNCIAR</span>
+    </article>
+
+    <article class="event-card">
+      <div>
+        <div class="event-date">BOOKING</div>
+        <h3>Eventos privados</h3>
+        <p>Festas, aniversários, clubs, eventos e outras celebrações.</p>
+      </div>
+      <span class="event-status">DISPONÍVEL PARA BOOKING</span>
+    </article>
+
+    <article class="event-card">
+      <div>
+        <div class="event-date">DJ BLACKBURN</div>
+        <h3>Atuações &amp; festas</h3>
+        <p>Para informações sobre datas e disponibilidade, entra em contacto.</p>
+      </div>
+      <span class="event-status">CONTACTAR</span>
+    </article>
+  </div>
+
+  <div class="booking-box">
+    <div>
+      <h3>Queres o DJ BlackBurn no teu evento?</h3>
+      <p>Contacta para bookings, festas, clubs e colaborações.</p>
+    </div>
+    <a class="btn" href="#contacto">PEDIR BOOKING</a>
   </div>
 </section>
 
