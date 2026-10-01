@@ -7,6 +7,26 @@
 <title>DJ BlackBurn — Official</title>
 <link rel="stylesheet" href="/styles.css">
 <style>
+  /* DJ BLACKBURN — BOOKING PRO */
+.booking-pro{border-top:1px solid rgba(255,181,46,.18)}
+.booking-pro-head{display:grid;grid-template-columns:1fr 360px;gap:45px;align-items:end;margin-bottom:34px}
+.booking-lead{max-width:700px;color:#c4b5a5;font-size:18px;line-height:1.7;margin:16px 0 0}
+.booking-lead strong{color:#ffc857}
+.booking-contact-card{padding:22px;border:1px solid rgba(255,181,46,.28);border-radius:18px;background:linear-gradient(145deg,#1a1008,#0b0805);box-shadow:0 14px 40px rgba(0,0,0,.25)}
+.booking-contact-card span{display:block;color:#ffc857;font-size:10px;letter-spacing:2px;font-weight:900;margin-bottom:8px}
+.booking-contact-card strong{display:block;color:#fff5e4;font-size:17px;word-break:break-word}
+.booking-contact-card a{display:inline-block;margin-top:12px;color:#ffb52e;font-size:12px}
+.booking-form{padding:28px;border:1px solid rgba(255,181,46,.20);border-radius:22px;background:linear-gradient(145deg,rgba(27,16,8,.94),rgba(11,8,5,.96));box-shadow:0 20px 65px rgba(0,0,0,.30)}
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
+.booking-grid label{display:block;color:#cbb9a4;font-size:13px;margin:12px 0}
+.booking-grid input,.booking-grid textarea,.booking-grid select{width:100%;margin-top:8px;background:#090604;color:#fff;border:1px solid rgba(255,181,46,.20);border-radius:11px;padding:14px;font:inherit}
+.booking-grid input:focus,.booking-grid textarea:focus,.booking-grid select:focus{outline:none;border-color:#ffc857;box-shadow:0 0 0 3px rgba(255,181,46,.08)}
+.booking-grid option{background:#120b06;color:#fff}
+.booking-full{grid-column:1/-1}
+.booking-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.booking-status{min-height:20px;color:#ffc857;margin:16px 0 0;font-size:13px}
+.booking-small{color:#806d58;font-size:11px;line-height:1.5;margin:10px 0 0}
+@media(max-width:760px){.booking-pro-head{grid-template-columns:1fr;gap:22px}.booking-grid{grid-template-columns:1fr}.booking-full{grid-column:auto}.booking-form{padding:18px}}
 .hero{min-height:86vh}
 .hero-bg{background-image:linear-gradient(100deg,rgba(5,5,5,.94) 12%,rgba(5,5,5,.62) 55%,rgba(5,5,5,.2) 100%),url('/dj-blackburn.png');background-position:center;background-size:cover}
 .hero-content{max-width:1000px}.hero .eyebrow{color:#f0a33a}
@@ -109,7 +129,65 @@
   <div id="songs" class="songs-grid"><div class="loading">A carregar músicas...</div></div>
 </section>
 
-<section id="contacto" class="section contact">
+<section id="booking" class="section booking-pro">
+  <div class="booking-pro-head">
+    <div>
+      <p class="eyebrow">BOOKING DJ BLACKBURN</p>
+      <h2>Vamos fazer a festa.</h2>
+      <p class="booking-lead">Preenche o formulário e envia o teu pedido de booking diretamente para <strong>dcoutinho236@gmail.com</strong>.</p>
+    </div>
+    <div class="booking-contact-card">
+      <span>BOOKING</span>
+      <strong>dcoutinho236@gmail.com</strong>
+      <a href="mailto:dcoutinho236@gmail.com">Enviar email direto ↗</a>
+    </div>
+  </div>
+
+  <form id="bookingForm" class="booking-form">
+    <div class="booking-grid">
+      <label>Nome *
+        <input name="name" type="text" placeholder="O teu nome" required>
+      </label>
+      <label>Email *
+        <input name="email" type="email" placeholder="o-teu-email@email.com" required>
+      </label>
+      <label>Telefone
+        <input name="phone" type="tel" placeholder="+33 ...">
+      </label>
+      <label>Data do evento *
+        <input name="date" type="date" required>
+      </label>
+      <label>Cidade *
+        <input name="city" type="text" placeholder="Cidade / país" required>
+      </label>
+      <label>Tipo de evento
+        <select name="eventType">
+          <option value="">Selecionar</option>
+          <option>Discoteca / Club</option>
+          <option>Festa privada</option>
+          <option>Aniversário</option>
+          <option>Casamento</option>
+          <option>Festival</option>
+          <option>Evento empresarial</option>
+          <option>Outro</option>
+        </select>
+      </label>
+      <label class="booking-full">Número aproximado de pessoas
+        <input name="guests" type="number" min="1" placeholder="Ex.: 200">
+      </label>
+      <label class="booking-full">Mensagem *
+        <textarea name="message" rows="6" placeholder="Conta-me um pouco sobre o evento, horário, local e o que procuras..." required></textarea>
+      </label>
+    </div>
+    <div class="booking-actions">
+      <button class="btn" type="submit">📩 ENVIAR PEDIDO DE BOOKING</button>
+      <a class="btn ghost" href="mailto:dcoutinho236@gmail.com">✉ EMAIL DIRETO</a>
+    </div>
+    <p id="bookingStatus" class="booking-status" aria-live="polite"></p>
+    <p class="booking-small">Ao clicar em “Enviar pedido”, será aberta uma nova mensagem de email já preenchida com os dados do formulário.</p>
+  </form>
+</section>
+
   <p class="eyebrow">BOOKING &amp; SOCIAL</p><h2>Vamos fazer a festa.</h2>
   <p>Para bookings, eventos e colaborações, entra em contacto comigo.</p>
   <div class="socials">
@@ -167,5 +245,38 @@
 </script>
 <script src="/app.js"></script>
 <script src="/events.js"></script>
+  (function(){
+  const form=document.getElementById("bookingForm");
+  const status=document.getElementById("bookingStatus");
+  if(!form)return;
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    const d=new FormData(form);
+    const name=(d.get("name")||"").trim();
+    const clientEmail=(d.get("email")||"").trim();
+    const phone=(d.get("phone")||"").trim();
+    const date=(d.get("date")||"").trim();
+    const city=(d.get("city")||"").trim();
+    const type=(d.get("eventType")||"").trim();
+    const guests=(d.get("guests")||"").trim();
+    const message=(d.get("message")||"").trim();
+    const subject="Pedido de Booking — DJ BlackBurn — "+name;
+    const body=[
+      "NOVO PEDIDO DE BOOKING — DJ BLACKBURN","",
+      "Nome: "+name,
+      "Email: "+clientEmail,
+      "Telefone: "+(phone||"Não indicado"),
+      "Data do evento: "+date,
+      "Cidade: "+city,
+      "Tipo de evento: "+(type||"Não indicado"),
+      "Número de pessoas: "+(guests||"Não indicado"),"",
+      "Mensagem:",message
+    ].join("\n");
+    const gmail="https://mail.google.com/mail/?view=cm&fs=1&to=dcoutinho236@gmail.com&su="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+    status.textContent="A abrir o email com o teu pedido preenchido…";
+    const win=window.open(gmail,"_blank","noopener,noreferrer");
+    if(!win) window.location.href="mailto:dcoutinho236@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+  });
+})();
 </body>
 </html>
