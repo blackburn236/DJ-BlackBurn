@@ -1,0 +1,41 @@
+:root{--bg:#070707;--panel:#111;--text:#f6f6f6;--muted:#a6a6a6;--line:#292929;--accent:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;padding-bottom:100px}
+a{color:inherit;text-decoration:none}
+.top{position:sticky;top:0;z-index:20;height:72px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(5,5,5,.88);backdrop-filter:blur(14px);border-bottom:1px solid #1e1e1e}
+.logo{font-size:24px;font-weight:800;letter-spacing:-1px}.logo span{font-weight:300}
+nav{display:flex;gap:24px;font-size:12px;letter-spacing:1.4px}nav a{opacity:.78}nav a:hover{opacity:1}.admin-link{border:1px solid #444;padding:9px 12px;border-radius:99px}
+.hero{min-height:78vh;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 75% 40%,#3a3a3a,transparent 35%),linear-gradient(100deg,#050505 20%,rgba(5,5,5,.6)),url('/dj-blackburn.png') center/cover no-repeat;filter:grayscale(1);opacity:.7}
+.hero-content{position:relative;padding:8vw 6vw;max-width:900px}.eyebrow{font-size:11px;letter-spacing:4px;color:#aaa;margin:0 0 18px}
+.hero h1{font-size:clamp(60px,12vw,150px);line-height:.82;margin:0;font-weight:300;letter-spacing:-7px}.hero h1 strong{font-weight:900;display:block}
+.tag{font-size:20px;color:#ccc;margin:32px 0}.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;background:#fff;color:#050505;padding:14px 22px;border-radius:99px;font-weight:800;letter-spacing:.7px;cursor:pointer}.btn.ghost{background:transparent;color:#fff;border:1px solid #555}
+.section{padding:90px 6vw;max-width:1400px;margin:auto}.about{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;border-top:1px solid var(--line)}h2{font-size:clamp(36px,5vw,72px);margin:0;letter-spacing:-3px}
+.about>div>p{font-size:20px;line-height:1.7;color:#bbb;margin:0}.music-section{border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px}.search{background:#111;border:1px solid #333;color:#fff;border-radius:99px;padding:14px 18px;min-width:260px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:30px 0}
+.filter{border:1px solid #333;background:#111;color:#bbb;padding:8px 14px;border-radius:99px;cursor:pointer}.filter.active{background:#fff;color:#000}
+.songs-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;width:100%}
+.song{background:#101010;border:1px solid #242424;border-radius:18px;overflow:hidden;transition:.2s}.song:hover{transform:translateY(-6px);border-color:#555;box-shadow:0 18px 45px rgba(0,0,0,.35)}
+.cover{aspect-ratio:1;background:#181818;display:flex;align-items:center;justify-content:center;overflow:hidden}.cover img{width:100%;height:100%;object-fit:cover}.cover .placeholder{font-size:50px}
+.song-body{padding:18px}.song-title{font-size:21px;font-weight:800;margin:0 0 6px}.meta{color:#888;font-size:12px;letter-spacing:.6px}
+.desc{color:#aaa;font-size:14px;line-height:1.5;min-height:42px}
+.listen-btn{width:100%;margin-top:16px;border:0;background:#fff;color:#050505;border-radius:999px;padding:13px 18px;font-weight:900;letter-spacing:.5px;cursor:pointer}.listen-btn:hover{transform:scale(1.02)}
+.contact{border-top:1px solid var(--line)}.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.socials a{border:1px solid #444;border-radius:99px;padding:12px 18px}
+footer{text-align:center;border-top:1px solid var(--line);padding:30px;color:#666;font-size:12px}.loading,.empty{color:#888;padding:30px 0}
+.hidden{display:none!important}
+
+.player{position:fixed;left:20px;right:20px;bottom:18px;z-index:100;display:grid;grid-template-columns:64px minmax(170px,260px) 1fr 42px;gap:16px;align-items:center;padding:12px 16px;background:rgba(15,15,15,.96);border:1px solid #3a3a3a;border-radius:18px;box-shadow:0 15px 50px rgba(0,0,0,.65);backdrop-filter:blur(18px)}
+.player-cover{width:64px;height:64px;border-radius:12px;overflow:hidden;background:#222;display:flex;align-items:center;justify-content:center;font-size:28px}.player-cover img{width:100%;height:100%;object-fit:cover}
+.player-info{min-width:0;display:flex;flex-direction:column;gap:5px}.player-info strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player-info span{color:#999;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.player audio{width:100%;height:42px}.close-player{width:36px;height:36px;border:1px solid #444;background:#111;color:#fff;border-radius:50%;font-size:22px;cursor:pointer}.close-player:hover{background:#fff;color:#000}
+
+.admin-body{min-height:100vh}.admin-wrap{max-width:1100px;margin:auto;padding:70px 5vw}.panel{background:#111;border:1px solid #282828;border-radius:20px;padding:28px;margin-bottom:28px}.login{max-width:520px;margin:60px auto}.login input{width:100%;margin:15px 0}.admin-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:block;color:#aaa;font-size:13px;margin:12px 0}input,textarea{width:100%;margin-top:8px;background:#080808;color:#fff;border:1px solid #333;border-radius:10px;padding:13px;font:inherit}textarea{resize:vertical}.form-actions{display:flex;gap:10px;margin-top:20px}.msg{min-height:20px;color:#aaa}.admin-list{display:grid;gap:12px}.admin-item{display:grid;grid-template-columns:90px 1fr auto;gap:18px;align-items:center;background:#111;border:1px solid #262626;border-radius:14px;padding:12px}.admin-cover{width:90px;height:90px;object-fit:cover;border-radius:10px;background:#1b1b1b}.admin-info strong{font-size:17px}.admin-actions{display:flex;gap:8px;flex-wrap:wrap}.small{padding:9px 13px;font-size:12px}
+
+@media(max-width:1150px){.songs-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:900px){.songs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+body{padding-bottom:125px}nav{gap:10px}nav a:not(.admin-link){display:none}.hero{min-height:72vh}.hero h1{letter-spacing:-4px}.about,.form-grid{grid-template-columns:1fr}.section{padding:65px 5vw}.section-head{align-items:stretch;flex-direction:column}.search{min-width:0;width:100%}.admin-item{grid-template-columns:70px 1fr}.admin-cover{width:70px;height:70px}.admin-actions{grid-column:1/-1}
+.songs-grid{grid-template-columns:1fr}.player{left:10px;right:10px;bottom:10px;grid-template-columns:52px 1fr 34px;gap:10px;padding:10px 12px}.player-cover{width:52px;height:52px}.player audio{grid-column:1/-1;width:100%;height:38px}.close-player{width:32px;height:32px}
+}
