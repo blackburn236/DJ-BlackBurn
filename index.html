@@ -3,32 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="DJ BlackBurn — música, Afro House, Afrobeats, Kizomba, Reggaeton e Funk BR.">
 <title>DJ BlackBurn — Official</title>
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <header class="top">
-  <a class="logo" href="/">DJ <span>BlackBurn</span></a>
+  <a class="logo" href="#top">DJ <span>BlackBurn</span></a>
   <nav><a href="#sobre">SOBRE</a><a href="#musica">MY MUSIC</a><a href="#contacto">CONTACTO</a><a class="admin-link" href="/admin.html">ADMIN</a></nav>
 </header>
 
+<main id="top">
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg"></div><div class="hero-glow"></div>
   <div class="hero-content">
     <p class="eyebrow">DJ • PRODUCER • ENTERTAINER</p>
     <h1>DJ <strong>BLACKBURN</strong></h1>
     <p class="tag">A música não se ouve apenas. <b>SENTE-SE.</b></p>
-    <div class="buttons"><a class="btn" href="#musica">OUVIR AS MINHAS MÚSICAS</a><a class="btn ghost" href="#contacto">BOOKING</a></div>
+    <div class="buttons"><a class="btn" href="#musica">▶ OUVIR AS MINHAS MÚSICAS</a><a class="btn ghost" href="#contacto">BOOKING</a></div>
   </div>
 </section>
 
 <section id="sobre" class="section about">
   <div><p class="eyebrow">DJ BLACKBURN</p><h2>Som, energia e identidade.</h2></div>
-  <p>DJ BlackBurn apresenta uma mistura de Afro House, Afrobeats, Kizomba, Reggaeton, Funk BR e sons de festa. Este é o espaço oficial para ouvir os meus lançamentos e acompanhar os meus projetos.</p>
+  <div><p>DJ BlackBurn apresenta uma mistura de Afro House, Afrobeats, Kizomba, Reggaeton, Funk BR e sons de festa. Este é o espaço oficial para ouvir os meus lançamentos e acompanhar os meus projetos.</p><div class="genre-line"><span>AFRO HOUSE</span><span>AFROBEATS</span><span>KIZOMBA</span><span>REGGAETON</span><span>FUNK BR</span></div></div>
 </section>
 
 <section id="musica" class="section music-section">
-  <div class="section-head"><div><p class="eyebrow">MY MUSIC</p><h2>As minhas músicas</h2></div><input id="search" class="search" placeholder="Procurar música..."></div>
+  <div class="section-head"><div><p class="eyebrow">MY MUSIC</p><h2>As minhas músicas</h2><p class="section-sub">Escolhe uma música e carrega em <b>OUVIR</b>.</p></div><div class="music-tools"><div class="search-wrap"><span>⌕</span><input id="search" class="search" placeholder="Procurar música..." autocomplete="off"></div><span id="count" class="count"></span></div></div>
   <div class="filters" id="filters"></div>
   <div id="songs" class="songs-grid"><div class="loading">A carregar músicas...</div></div>
 </section>
@@ -36,12 +38,16 @@
 <section id="contacto" class="section contact">
   <p class="eyebrow">BOOKING & SOCIAL</p><h2>Vamos fazer a festa.</h2>
   <p>Para bookings, eventos e colaborações, entra em contacto comigo.</p>
-  <div class="socials">
-    <a href="https://www.instagram.com/_blackburn_0/" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
-    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-  </div>
+  <div class="socials"><a href="https://www.instagram.com/_blackburn_0/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook ↗</a></div>
 </section>
+</main>
+
+<div id="player" class="player hidden">
+  <div class="player-cover" id="playerCover"><span>♪</span></div>
+  <div class="player-info"><strong id="playerTitle">DJ BlackBurn</strong><span id="playerArtist">Seleciona uma música</span></div>
+  <audio id="audio" controls preload="none"></audio>
+  <button id="closePlayer" class="close-player" title="Fechar">×</button>
+</div>
 <footer>© <span id="year"></span> DJ BlackBurn — Official Website</footer>
 <script src="/app.js"></script>
 </body>
