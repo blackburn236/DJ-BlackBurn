@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dj-blackburn.onrender.com/sitemap.xml
